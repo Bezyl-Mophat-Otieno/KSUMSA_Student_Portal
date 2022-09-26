@@ -1,0 +1,55 @@
+
+<div class="col-6">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="<%- typeof reg_no!= 'undefined' ? reg_no : '' %>" placeholder="First Name" name="reg_no">
+    <label for="floatingInput">Registration Number</label>
+  </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="<%- typeof first_name != 'undefined' ? first_name : '' %>" placeholder="First Name" name="first_name">
+      <label for="floatingInput">First Name</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="<%- typeof last_name != 'undefined' ? last_name : '' %>" placeholder="Last Name" name="last_name">
+      <label for="floatingInput">Last Name</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="<%- typeof school != 'undefined' ? school : '' %>" placeholder="School Of ..." name="school">
+      <label for="floatingInput">School</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="<%- typeof course != 'undefined' ? course : '' %>" placeholder="Course " name="course">
+      <label for="floatingInput">Course</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="<%- typeof phone != 'undefined' ? phone : '' %>" placeholder="Phone" name="phone">
+      <label for="floatingInput">Phone</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <select name="status" id="status">
+        <option value="active" selected >Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-floating mb-3">
+      <textarea class="form-control" placeholder="Leave a comment here" id="comments" name="comments" style="height: 200px"></textarea>
+      <label for="comments">Comments</label>
+    </div>
+  </div>
+  <div class="col-12 d-grid">
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>

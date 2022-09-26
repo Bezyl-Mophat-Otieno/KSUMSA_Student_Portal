@@ -1,0 +1,45 @@
+<% if(locals.alerts){ %>
+    
+    <% alerts.forEach((alert)=> { %>
+
+        <div class="mt-3 alert alert-warning  alert-dismissible fade show" role="alert">
+            <strong class="text-muted"><%= alert.msg %> </strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    <% }); %>
+
+     <% } %>
+
+     <% if(success_msg != '' ) { %> 
+
+<div class=" mt-3 alert alert-success  alert-dismissible fade show" role="alert">
+            <strong class="text-muted"><%= success_msg %> </strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+
+<% } %> 
+
+
+<% if(error_msg != '' ) { %> 
+
+  <div class="alert alert-warning  alert-dismissible fade show" role="alert">
+              <strong class="text-muted"><%= error_msg %> </strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+  
+  
+  <% } %> 
+
+
+<% if(error != '' ) { %> 
+
+  <div class="alert alert-warning  alert-dismissible fade show" role="alert">
+              <strong class="text-muted"><%= error %> </strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+  
+  
+  <% } %> 
+
+

@@ -1,0 +1,29 @@
+{
+  "name": "ksumsa_registration_portal",
+  "version": "1.0.0",
+  "description": " KSUMSA  Members registration portal using MYSQL as the database.",
+  "main": "server.js ",
+  "scripts": {
+    "start": " cross-env NODE_ENV=production node server",
+    "server": " cross-env NODE_ENV=development nodemon server"
+  },
+  "author": "MOPHAT",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.6.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.19"
+  }
+}

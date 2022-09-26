@@ -1,0 +1,74 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+    </ol>
+  </nav>
+  
+  <% results.forEach(( result)=>{%>
+
+    <h3><%- result.First_Name %>  <%- result.Last_Name %> </h3>
+    <hr>
+
+<form class="row g-3 needs-validation" method="POST" action="/editMemberInfo/ <%- result.ID %> " novalidate>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.Reg_No %>  placeholder="First Name" name="reg_no" >
+<label for="floatingInput">Registration Number</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.First_Name %> placeholder="First Name" name="first_name" >
+<label for="floatingInput">First Name</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.Last_Name %>  placeholder="Last Name" name="last_name" >
+<label for="floatingInput">Last Name</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.School %> placeholder="School Of ..." name="school">
+<label for="floatingInput">School</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.Course %> placeholder="Course " name="course" >
+<label for="floatingInput">Course</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="floatingInput" value=<%- result.Phone_number %> placeholder="Phone" name="phone" >
+<label for="floatingInput">Phone</label>
+</div>
+</div>
+<div class="col-6">
+<div class="form-floating mb-3">
+<select name="status" id="status">
+<option value="active" selected >Active</option>
+<option value="inactive">Inactive</option>
+</select>
+</div>
+</div>
+
+<div class="col-12">
+<div class="form-floating mb-3">
+<textarea class="form-control" placeholder="Leave a comment here" id="comments" name="comments" style="height: 200px"></textarea>
+<label for="comments">Comments</label>
+</div>
+</div>
+<div class="col-12 d-grid">
+<button class="btn btn-primary" type="submit" >Submit</button>
+</div>
+
+</form>
+
+
+
+<% }) %> 
