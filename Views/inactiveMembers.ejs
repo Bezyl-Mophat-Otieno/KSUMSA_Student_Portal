@@ -43,7 +43,7 @@
                   <input type="hidden" name="_method" value="PUT">
                   <a href="/editMemberInfo/<%- result.ID %> " type="submit" class="btn btn-light btn-outline-success btn-small "><i class="bi bi-pencil"></i>Edit</a>
                 </form>
-                <form action="/deactivateMember/<%- result.ID %>" method="POST" id="edit-form" class="mx-1">
+                <form action="/activateMember/<%- result.ID %>" method="POST" id="edit-form" class="mx-1">
                   <button type="submit" class="btn btn-light btn-outline-primary btn-small "><i class="bi bi-person-x"></i>Activate</button>
                 </form>
                 <form action="/deleteMember/<%- result.ID %>" method="POST" id="delete-form" class="mx-1">

@@ -30,7 +30,7 @@ const inputFields =  [ reg_no,first_name,last_name,school,course , phone , statu
 if(!reg_no | !first_name | !last_name | !school | !course | !phone | !status) {
 
   alerts.push({msg:'Kindly fill in all details '})
-  res.render('add_user' , { errors , reg_no,first_name, last_name, school , course , phone, status})
+  res.render('add_user' , { alerts , reg_no,first_name, last_name, school , course , phone, status})
 
 
 } else {
@@ -43,7 +43,7 @@ if(!reg_no | !first_name | !last_name | !school | !course | !phone | !status) {
     res.status(201)
   
   //Flash a message before redirecting 
-  req.flash('success_msg', 'Member R e g i s t e r e d Successfully.')
+  req.flash('success_msg', 'M e m b e r   R e g i s t e r e d   S u c c e s s f u  l l y.')
   res.redirect('/dashboard');
   return
     } else{
@@ -103,9 +103,6 @@ const memberInfo = (req , res ) =>{
 if(!err){
 res.status(200)
 res.render('user_info', {results} )
-let test = results.forEach((result)=>{
-console.log(result.First_Name)
-});
 return
 }else{
   res.status(400)
@@ -147,7 +144,7 @@ const editMemberInfo = (req , res )=>{
   db.query ( sql , inputFields, ( err , results) =>{
   if(!err){
   res.status(201)
-  req.flash('success_msg', "Member's Info U p d a t e d Successfully.")
+  req.flash('success_msg', "M e m b e r's   I n f o   U p d a t e d    S u c c e s s f u l l y.")
   res.redirect('/dashboard')
   return
   } else{
@@ -166,7 +163,7 @@ const editMemberInfo = (req , res )=>{
     db.query ( sql ,[req.params.id],( err , results) =>{
     if(!err){
     res.status(201)
-    req.flash('success_msg', 'Member Permanently  D e l e t e d.')
+    req.flash('success_msg', 'M e m b e r   P e r m a n e n t l y   D e l e t e d.')
     res.redirect('/dashboard')
     return
     } else{
@@ -184,7 +181,7 @@ const editMemberInfo = (req , res )=>{
     db.query( sql, ['inactive',req.params.id] , ( err , result)=>{
  if(!err){
 res.status(200)
-req.flash('success_msg', 'Member  Successfully d e a c t i v a t e d.')
+req.flash('success_msg', 'M e m b e r    S u c c e s s f u l l y   d e a c t i v a t e d.')
 res.redirect('/dashboard')
 return
  }else{
@@ -195,14 +192,14 @@ return
     })
     }
 
-        // deactivate a member    
-     // POST /deactivateMember/:id
+        // activate a member    
+     // POST /activateMember/:id
      const activateMember = (req,res)=>{
       let sql = 'UPDATE Members SET status = ? WHERE ID = ?'
     db.query( sql, ['active',req.params.id] , ( err , result)=>{
  if(!err){
 res.status(200)
-req.flash('success_msg', 'Member  Successfully  a c t i v a t e d.')
+req.flash('success_msg', 'M e m b e r   S u c c e s s f u l l y   a c t i v a t e d.')
 res.redirect('/dashboard')
 return
  }else{
